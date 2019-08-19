@@ -1,0 +1,4 @@
+
+composer create-project laravel/laravel messenger "5.5.*"
+
+https://series.programacionymas.com/aprende-laravel-desarrollando-un-sistema/proyectos
