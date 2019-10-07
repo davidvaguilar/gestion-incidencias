@@ -17,7 +17,8 @@ class IncidentController extends Controller
 
     public function show($id){
         $incident = Incident::findOrFail($id);
-        return view('incidents.show')->with(compact('incident'));
+        $messages = $incident->messages;
+        return view('incidents.show')->with(compact('incident', 'messages'));
     }
 
     public function create(){
@@ -108,8 +109,6 @@ class IncidentController extends Controller
       $incident->description = $request->input('description');
       $incident->save();
       return redirect("/ver/$id");
-
-
     }
 
     public function nextLevel($id){

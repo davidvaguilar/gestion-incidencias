@@ -29,12 +29,16 @@ Route::post('/incidencia/{id}/editar', 'IncidentController@update');
 
 Route::get('/ver/{id}', 'IncidentController@show');
 
-
 Route::get('/incidencia/{id}/atender', 'IncidentController@take');
 Route::get('/incidencia/{id}/resolver', 'IncidentController@solve');
 Route::get('/incidencia/{id}/abrir', 'IncidentController@open');
 Route::get('/incidencia/{id}/derivar', 'IncidentController@nextLevel');
 //Route::post('/reportar', 'IncidentController@store');
+
+
+Route::post('/mensajes', 'MessageController@store');
+
+
 
 Route::group( ['middleware' => 'admin', 'namespace' => 'Admin'], function(){
   Route::get('/usuarios', 'UserController@index');
